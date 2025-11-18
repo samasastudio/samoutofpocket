@@ -8,39 +8,43 @@ interface BentoGridProps {
 
 export const BentoGrid: React.FC<BentoGridProps> = ({ items }) => {
   return (
-    <div className="min-h-screen w-full bg-white">
-      <div className="mx-auto max-w-[1800px] border-x border-grid-line">
+    <div className="min-h-screen w-full bg-swiss-black">
+      {/* Full width container with gaps showing the swiss-black background */}
+      <div className="w-full p-3">
         {/* 
-            FIXED ROW HEIGHT: md:auto-rows-[240px] 
+            Immersive sizing updates:
+            - Reduced row height from 45vh to 30vh to make the title and footer less overwhelming.
+            - Added gap-3 for the "off-black between" look (now pure black).
+            - Added rounded corners to blocks via the BentoItem component and manual classes here.
         */}
-        <div className="grid grid-cols-1 gap-px bg-grid-line md:grid-cols-3 lg:grid-cols-4 md:auto-rows-[240px]">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 auto-rows-[35vh] md:auto-rows-[30vh] gap-3 grid-flow-row-dense">
           
-          {/* Intro Block - Spans 2x2 units (480px height on desktop) */}
-          <div className="col-span-1 md:col-span-2 lg:col-span-2 row-span-1 md:row-span-2 flex flex-col justify-between bg-white p-6 md:p-10">
-            <div>
-               <div className="flex items-center gap-3 mb-6">
-                  <div className="h-px w-8 bg-swiss-black"></div>
-                  <p className="font-mono text-[10px] uppercase tracking-widest text-swiss-black font-medium">
-                    Archive 2023—2024
+          {/* Intro Block - Massive Hero Section */}
+          <div className="col-span-1 md:col-span-2 lg:col-span-2 row-span-1 md:row-span-2 flex flex-col justify-between bg-white p-8 md:p-12 overflow-hidden relative group rounded-2xl ring-1 ring-white/10">
+            <div className="relative z-10">
+               <div className="flex items-center gap-4 mb-8">
+                  <div className="h-[2px] w-12 bg-swiss-black"></div>
+                  <p className="font-mono text-xs uppercase tracking-[0.2em] text-swiss-black font-semibold">
+                    Portfolio 2023—2024
                   </p>
                </div>
-              <h1 className="font-display text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.85] tracking-tighter text-swiss-black uppercase">
+              <h1 className="font-display text-[12vw] md:text-[4vw] font-bold leading-[0.85] tracking-tighter text-swiss-black uppercase break-words">
                 Sam<br/>
                 Out Of<br/>
                 Pocket
               </h1>
             </div>
             
-            <div className="mt-8 grid grid-cols-2 gap-12 border-t border-grid-line pt-8">
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-grid-line relative z-10">
               <div className="flex flex-col gap-2">
-                <span className="font-mono text-[9px] uppercase tracking-widest text-swiss-gray">Concept</span>
-                <p className="font-sans text-lg md:text-xl font-normal leading-snug text-swiss-black max-w-[200px]">
-                  Visual exploration of ephemeral moments.
+                <span className="font-mono text-[9px] uppercase tracking-widest text-swiss-gray">Manifesto</span>
+                <p className="font-sans text-lg font-light leading-tight text-swiss-black">
+                  Visual exploration of ephemeral moments, brutalist structures, and light.
                 </p>
               </div>
               <div className="flex flex-col gap-2">
-                <span className="font-mono text-[9px] uppercase tracking-widest text-swiss-gray">Status</span>
-                <p className="font-sans text-lg md:text-xl font-normal leading-snug text-swiss-black max-w-[200px]">
+                <span className="font-mono text-[9px] uppercase tracking-widest text-swiss-gray">Current Status</span>
+                <p className="font-sans text-lg font-light leading-tight text-swiss-black">
                   Based in Nowhere.<br/>
                   Open for archival work.
                 </p>
@@ -52,16 +56,16 @@ export const BentoGrid: React.FC<BentoGridProps> = ({ items }) => {
             <BentoItem key={item.id} item={item} />
           ))}
           
-          {/* Footer Block - 1x1 unit */}
-          <div className="col-span-1 row-span-1 flex flex-col justify-between bg-white p-6 md:p-8 group hover:bg-stone-50 transition-colors cursor-pointer">
+          {/* Footer Block - Interactive Contact Tile */}
+          <div className="col-span-1 row-span-1 flex flex-col justify-between bg-swiss-black p-8 group transition-colors cursor-pointer hover:bg-neutral-900 text-white rounded-2xl border border-white/10">
             <div>
-               <div className="w-2 h-2 bg-swiss-black rounded-full mb-6"></div>
-               <div className="font-display text-3xl md:text-4xl font-bold tracking-tighter uppercase">Get in Touch</div>
+               <div className="w-2 h-2 bg-white rounded-full mb-6 animate-pulse"></div>
+               <div className="font-display text-3xl md:text-4xl font-bold tracking-tighter uppercase leading-none">Let's<br/>Work</div>
             </div>
-            <div className="flex flex-col gap-3 font-mono text-[10px] uppercase tracking-widest text-swiss-black">
-              <a href="#" className="flex justify-between border-b border-grid-line pb-1 hover:text-swiss-gray hover:indent-2 transition-all">Instagram <span>↗</span></a>
-              <a href="#" className="flex justify-between border-b border-grid-line pb-1 hover:text-swiss-gray hover:indent-2 transition-all">Twitter <span>↗</span></a>
-              <a href="#" className="flex justify-between border-b border-grid-line pb-1 hover:text-swiss-gray hover:indent-2 transition-all">Email <span>↗</span></a>
+            <div className="flex flex-col gap-3 font-mono text-[10px] uppercase tracking-widest text-neutral-400">
+              <a href="#" className="flex justify-between border-b border-neutral-800 pb-2 hover:text-white hover:pl-2 transition-all">Instagram <span>↗</span></a>
+              <a href="#" className="flex justify-between border-b border-neutral-800 pb-2 hover:text-white hover:pl-2 transition-all">Twitter <span>↗</span></a>
+              <a href="#" className="flex justify-between border-b border-neutral-800 pb-2 hover:text-white hover:pl-2 transition-all">Email <span>↗</span></a>
             </div>
           </div>
         </div>

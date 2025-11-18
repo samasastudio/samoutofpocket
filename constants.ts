@@ -1,3 +1,4 @@
+
 import { FeedItem, ContentType, BlockType } from './types';
 
 export const FEED_DATA: FeedItem[] = [
@@ -8,8 +9,8 @@ export const FEED_DATA: FeedItem[] = [
     date: '2023-11-15',
     description: 'Neon lights and rain-slicked streets in Shinjuku.',
     coverImage: 'https://picsum.photos/seed/tokyo/800/600',
-    tags: ['Street', 'Night', 'Color'],
-    size: 'large',
+    tags: ['Street', 'Night'],
+    size: 'wide',
     images: [
       { src: 'https://picsum.photos/seed/tokyo1/1200/800', alt: 'Shinjuku Crossing', orientation: 'landscape' },
       { src: 'https://picsum.photos/seed/tokyo2/800/1200', alt: 'Alleyway', orientation: 'portrait' },
@@ -25,7 +26,7 @@ export const FEED_DATA: FeedItem[] = [
     date: '2023-12-02',
     description: 'Why a point-and-shoot changed my entire approach to composition.',
     coverImage: 'https://picsum.photos/seed/camera/600/600',
-    tags: ['Gear', 'Philosophy', 'Writing'],
+    tags: ['Gear', 'Philosophy'],
     size: 'small',
     blocks: [
       {
@@ -74,7 +75,7 @@ export const FEED_DATA: FeedItem[] = [
     description: 'Slowing down the process with medium format.',
     coverImage: 'https://picsum.photos/seed/film/800/400',
     tags: ['Analog', 'Process'],
-    size: 'wide',
+    size: 'large',
     blocks: [
       {
         type: BlockType.TEXT,
@@ -99,7 +100,7 @@ export const FEED_DATA: FeedItem[] = [
     description: 'Fog, salt, and the eternal crash of waves.',
     coverImage: 'https://picsum.photos/seed/ocean/600/600',
     tags: ['Nature', 'Landscape'],
-    size: 'medium',
+    size: 'small',
     images: [
       { src: 'https://picsum.photos/seed/sea1/1200/800', alt: 'Big Sur', orientation: 'landscape' },
       { src: 'https://picsum.photos/seed/sea2/1200/800', alt: 'Waves', orientation: 'landscape' },
@@ -136,11 +137,68 @@ export const FEED_DATA: FeedItem[] = [
     description: 'Studio portraits of people I met on the subway.',
     coverImage: 'https://picsum.photos/seed/faces/800/600',
     tags: ['Portrait', 'Studio'],
-    size: 'medium',
+    size: 'wide',
     images: [
       { src: 'https://picsum.photos/seed/face1/800/1000', alt: 'Portrait 1', orientation: 'portrait' },
       { src: 'https://picsum.photos/seed/face2/800/1000', alt: 'Portrait 2', orientation: 'portrait' },
       { src: 'https://picsum.photos/seed/face3/800/1000', alt: 'Portrait 3', orientation: 'portrait' },
+    ]
+  },
+  {
+    id: 'proj-subway-blur',
+    type: ContentType.GALLERY,
+    title: 'SUBWAY BLUR',
+    date: '2024-04-10',
+    description: 'Motion and stillness underground.',
+    coverImage: 'https://picsum.photos/seed/subway/600/600',
+    tags: ['Street', 'Motion'],
+    size: 'large',
+    images: [
+      { src: 'https://picsum.photos/seed/sub1/800/1000', alt: 'Subway 1', orientation: 'portrait' },
+      { src: 'https://picsum.photos/seed/sub2/800/1000', alt: 'Subway 2', orientation: 'portrait' },
+    ]
+  },
+  {
+    id: 'blog-morning-routine',
+    type: ContentType.POST,
+    title: 'MORNING RITUALS',
+    date: '2024-04-15',
+    description: 'The quiet moments before the city wakes up.',
+    coverImage: 'https://picsum.photos/seed/coffee/800/400',
+    tags: ['Personal', 'Life'],
+    size: 'small',
+    blocks: [
+      {
+        type: BlockType.TEXT,
+        content: "Coffee, silence, and the first light of day. These are the ingredients of a good creative start."
+      }
+    ]
+  },
+   {
+    id: 'proj-industrial',
+    type: ContentType.GALLERY,
+    title: 'INDUSTRIAL SCARS',
+    date: '2024-05-01',
+    description: 'Abandoned factories on the outskirts.',
+    coverImage: 'https://picsum.photos/seed/factory/600/800',
+    tags: ['Urbex', 'Decay'],
+    size: 'wide',
+    images: [
+      { src: 'https://picsum.photos/seed/fact1/800/1200', alt: 'Factory 1', orientation: 'portrait' },
+      { src: 'https://picsum.photos/seed/fact2/800/1200', alt: 'Factory 2', orientation: 'portrait' },
+    ]
+  },
+  {
+    id: 'proj-minimal-sky',
+    type: ContentType.GALLERY,
+    title: 'NEGATIVE SPACE',
+    date: '2024-05-12',
+    description: 'Minimalist compositions of sky and wire.',
+    coverImage: 'https://picsum.photos/seed/sky/600/600',
+    tags: ['Minimalism', 'Blue'],
+    size: 'small',
+    images: [
+       { src: 'https://picsum.photos/seed/sky1/1000/1000', alt: 'Wire', orientation: 'landscape' }
     ]
   }
 ];
